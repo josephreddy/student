@@ -1,0 +1,157 @@
+<!-- <div class="container">
+  <h2>Student Form</h2>
+  <form [formGroup]="angForm" novalidate>
+    <div class="form-group">
+      <label class="center-block">Student Name: </label>
+      <input class="form-control" formControlName="studentname">
+    </div>
+    <div *ngIf="angForm.controls['studentname'].invalid && (angForm.controls['studentname'].dirty || angForm.controls['studentname'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['studentname'].errors.required">
+          Name is required.
+        </div>
+      </div>
+    <div class="form-group">
+      <label class="center-block">Course: </label>
+      <input class="form-control" formControlName="course">
+    </div>
+    <div *ngIf="angForm.controls['course'].invalid && (angForm.controls['course'].dirty || angForm.controls['course'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['course'].errors.required">
+          course is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="center-block">Course id: </label>
+        <input class="form-control" formControlName="courseid">
+      </div>
+      <div *ngIf="angForm.controls['courseid'].invalid && (angForm.controls['courseid'].dirty || angForm.controls['courseid'].touched)" class="alert alert-danger">
+          <div *ngIf="angForm.controls['courseid'].errors.required">
+            course id is required.
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="center-block">Place: </label>
+          <input class="form-control" formControlName="place">
+        </div>
+        <div *ngIf="angForm.controls['place'].invalid && (angForm.controls['place'].dirty || angForm.controls['place'].touched)" class="alert alert-danger">
+            <div *ngIf="angForm.controls['place'].errors.required">
+              place id is required.
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="center-block">Project: </label>
+            <input class="form-control" formControlName="project">
+          </div>
+          <div *ngIf="angForm.controls['project'].invalid && (angForm.controls['project'].dirty || angForm.controls['project'].touched)" class="alert alert-danger">
+              <div *ngIf="angForm.controls['project'].errors.required">
+                place id is required.
+              </div>
+            </div>
+    <div class="form-group">
+        <button class="btn btn-primary" color="primary" mat-raised-button type="submit" [disabled]="angForm.pristine || angForm.invalid">Create</button>
+    </div>
+  </form>
+</div>
+
+<h3>Student Details</h3>
+
+<table class="table table-striped table-bordered">
+  <thead>
+      <tr>
+          <th>Student Name</th>
+          <th>Course</th>
+          <th>Course Id</th>
+          <th>Place</th>
+          <th>Project</th>
+          <th>Action</th>
+          
+
+
+      </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor ="let personalDetail in personalDetails">
+         
+          <td>{{personalDetail.studentname}}</td>
+          <td>{{personalDetail.course}}</td>
+          <td>{{personalDetail.courseid}}</td>
+          <td>{{personalDetail.place}}</td>
+          <td>{{personalDetail.project}}</td>
+          <td>
+          <a  href="#" ng-click="edit(contact.id)">edit</a> | 
+          <a href="#" ng-click="delete(contact.id)">delete</a>
+        </td>
+      </tr>
+  </tbody>
+</table>
+ -->
+ <html>
+<head>
+  <title>Curd Opration</title>
+</head>
+<body id="centerid">
+    <div>
+        <h2>Student Form</h2>
+      <div class="row">
+        <div class="form-group">
+          <label for="repairstation" class="asterisk_input">SName:</label>
+            <input type="text" class="form-control" [(ngModel)]="sname" id="count" name="count"/>
+          <div class="error-message-block"></div>
+          </div>
+        </div><br>
+        <div class="row">
+            <div class="form-group">
+              <label for="repairstation" class="asterisk_input">Course:</label>
+                <input type="text" class="form-control" [(ngModel)]="course" id="course" name="course"/>
+              <div class="error-message-block"></div>
+              </div>
+          </div><br>
+            <div class="row">
+                <div class="form-group">
+                  <label for="repairstation" class="asterisk_input">Courseid:</label>
+                    <input type="text" class="form-control" [(ngModel)]="courseid" id="courseid" name="courseid"/>
+                  <div class="error-message-block"></div>
+                  </div>
+            </div><br>
+                <div class="row">
+                    <div class="form-group">
+                      <label for="repairstation" class="asterisk_input">Place:</label>
+                        <input type="text" class="form-control"  [(ngModel)]="place" id="place" name="place" />
+                      <div class="error-message-block"></div>
+                      </div>
+              </div><br>
+              <div class="row">
+                  <div class="form-group">
+                    <label for="repairstation" class="asterisk_input">Project:</label>
+                      <input type="text" class="form-control" [(ngModel)]="project" id="project" name="project"/>
+                    <div class="error-message-block"></div>
+                    </div>
+            </div><br>
+            <button (click)="submit()">Submit</button>
+    </div>
+    
+        <table class="table">
+            <tbody id="rowCount">
+                    <tr  *ngFor="let key of tableData; let index = index">
+                      <th>sname</th>
+                      <td>{{key}}</td>
+                     <!-- <td>
+                        <div>{{key.sname}}</div>
+                    </td>
+                    <td>
+                        <div>{{key.course}}</div>
+                    </td>
+                    <td>
+                        <div>{{key.courseid}}</div>
+                    </td>
+                    <td>
+                        <div>{{key.place}}</div>
+                    </td>
+                    <td>
+                        <div>{{key.project}}</div>
+                    </td> -->
+                </tr>
+            </tbody>
+        </table>
+</body>
+ </html>
+ 
